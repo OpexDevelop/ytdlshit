@@ -1,0 +1,42 @@
+{
+  "name": "cnvmp3-telegram-bot",
+  "version": "1.0.0",
+  "description": "Telegram bot to download YouTube videos using the CnvMP3 API",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "youtube",
+    "downloader",
+    "cnvmp3",
+    "grammy"
+  ],
+  "author": "OpexDev",
+  "license": "ISC",
+  "dependencies": {
+    "@datastax/astra-db-ts": "^1.5.0",
+    "@grammyjs/auto-retry": "^2.0.2",
+    "@grammyjs/conversations": "^2.0.1",
+    "@grammyjs/i18n": "^1.1.2",
+    "@grammyjs/ratelimiter": "^1.2.1",
+    "@grammyjs/runner": "^2.0.3",
+    "@grammyjs/transformer-throttler": "^1.2.1",
+    "@opexdevelop/cnvmp3-dl": "^1.0.4",
+    "@opexdevelop/soundcloud-dl": "^1.1.2",
+    "@opexdevelop/spotify-dl": "^1.0.0",
+    "express": "^4.21.2",
+    "node-fetch": "^3.3.2",
+    "opex-yt-info": "^1.0.1",
+    "p-queue": "^9.0.1",
+    "pg": "^8.14.1",
+    "sequelize": "^6.37.7"
+  }
+}
