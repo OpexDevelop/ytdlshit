@@ -5,6 +5,8 @@ const { Bot, GrammyError, HttpError, InlineKeyboard, InputFile, InputMediaBuilde
 import { run } from "@grammyjs/runner";
 import { limit } from '@grammyjs/ratelimiter';
 import { apiThrottler } from '@grammyjs/transformer-throttler';
+
+ import config from './config.js';
 import { autoRetry } from '@grammyjs/auto-retry';
 import fs from 'fs/promises';
 import path from 'path';
@@ -20,16 +22,7 @@ import { initializeDatabase, User, Message, Op, sequelize, upsertUser, recordMes
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-let config;
-try {
-    const configPath = path.resolve(__dirname, 'env.json');
-    const configFile = await fs.readFile(configPath, 'utf-8');
-    config = JSON.parse(configFile);
-} catch (err) {
-    console.error("CRITICAL: Error reading or parsing env.json:", err);
-    console.error("Please ensure env.json exists in the project root and contains all required fields (BOT_TOKEN, DB_*, CA_CERT_PATH, BOT_ADMIN_ID).");
-    process.exit(1);
-}
+
 
 const BOT_TOKEN = config.BOT_TOKEN;
 const EXPRESS_PORT = 30077;
